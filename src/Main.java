@@ -10,5 +10,6 @@ public class Main {
         cc.setSize(new Dimension(400,200));
         cc.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         cc.setResizable(false);
+
     }
 }

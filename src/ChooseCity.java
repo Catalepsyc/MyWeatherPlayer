@@ -3,17 +3,20 @@ import java.awt.*;
 
 public class ChooseCity extends JFrame {
     private JPanel mainPanel;
-    private JComboBox choosingCity;
+
     private JButton buttonOk;
     private JButton buttonNext;
+    private JComboBox comboBox1;
+    private JLabel cityLabel;
+    String  cityLabelString = "Enter or choose  your city name : ";
+
 
     public ChooseCity ()
     {
         add(mainPanel);
-        setTitle("Выберите город: ");
+        setTitle("Step 1  ");
         setSize(new Dimension(400,200));
-        //add(buttonOk);
-      //  add(buttonNext);
+        cityLabel.setText(cityLabelString);
         buttonOk.setText("Okey");
         buttonNext.setText("Next step");
 
