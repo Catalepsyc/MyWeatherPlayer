@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ChooseCity">
   <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="-2" y="-2" width="537" height="422"/>
+      <xy x="-2" y="-2" width="537" height="192"/>
     </constraints>
     <properties/>
     <border type="none"/>
