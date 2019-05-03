@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ChooseCity">
+  <grid id="27dc6" binding="mainPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="515" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="ffe77" class="javax.swing.JComboBox" binding="choosingCity">
+        <constraints/>
+        <properties>
+          <editable value="true"/>
+        </properties>
+      </component>
+      <component id="3a201" class="javax.swing.JButton" binding="buttonNext">
+        <constraints/>
+        <properties>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="7b207" class="javax.swing.JButton" binding="buttonOk">
+        <constraints/>
+        <properties>
+          <text value="Button"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
