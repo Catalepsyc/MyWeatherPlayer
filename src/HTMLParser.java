@@ -13,64 +13,79 @@ import java.util.function.Predicate;
 public class HTMLParser {
 
    public static  void main(String[] args) throws IOException {
-        List<Article>listOfEurope = new ArrayList<>();
-        List<Article>listOfRussia = new ArrayList<>();
-        List<Article>FullList = new ArrayList<>();
 
-       // Document myDocEurope = Jsoup.connect("https://www.tema.ru/travel/cities/european").get(); version1
-       Document myDocEurope = Jsoup.connect("https://avtoturistu.ru/page/список_городов_Европы").get();
-       Document myDocRussia = Jsoup.connect("https://ru.wikipedia.org/wiki/Список_городов_России").get();
-
-      // Elements h1Elements = myDocEurope.getElementsByAttributeValue("class","main-table w100"); version 1
-       Elements h1Elements = myDocEurope.getElementsByAttributeValue("class","content");
+        List<Article>listOfCity = new ArrayList<>();
+        List<String>FullList = new ArrayList<>();
 
 
-               //("class", "mw-parser-output");
-      // Elements h1Elements = myDocRussia.getElements
-        //standard sortable jquery-tablesorter
+       Document myDocCity = Jsoup.connect("http://otzyvoteli.ru/goroda").get();
+       //Document myDocRussia = Jsoup.connect("https://33tura.ru/goroda-rossii").get();
+
+      // Elements h1Elements = myDocEurope.getElementsByAttributeValue("class","content");
+       Elements h1Elements = myDocCity.getElementsByAttributeValue("class","hot-article");
+
+
         h1Elements.forEach (h1Element ->
         {
-            Element aElement = h1Element.child(0);
+            Element aElement = h1Element.child(1);
            //ng url = aElement.attr("href");
-            String title  =aElement.child(0).text();
-            listOfEurope.add(new Article(title));
+            String title  = aElement.child(0).text();
+            listOfCity.add(new Article(title));
 
         });
-        listOfEurope.forEach(System.out::println);
-        System.out.println(listOfEurope.get(1));
+        listOfCity.forEach(System.out::println);
+        //У нас один элимент ArrayListа listOfCity с индексом 1
+        //System.out.println(listOfCity.get(0));
+      System.out.println(listOfCity.get(0).getName());
+      //Создаем массив строк
+      // ArrayList<String> goroda = new ArrayList<String>();
+//Разбиваем спарсенную информацию на отдельные элементы
+       String sampleString = listOfCity.get(0).getName();
+       System.out.println(sampleString);
+       String[] items = sampleString.split(" ");
+       List<String> itemList = Arrays.asList(items);
+      // System.out.println(itemList.get(0));
+
+
+       System.out.println(itemList.get(0));
+
+
+
+
 
 
 
    }
 
-    static class Article
-    {
-        private  String name;
+
+}
+class Article
+{
+    private  String name;
 
 
-       @Override
-        public String toString() {
+    @Override
+    public String toString() {
 
-            return "Article{" +
-                    "name='" + name + '\'' +
-                    '}';
-
-        }
-
-        public Article(String name) {
-            this.name = name;
-
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
+        return "Article{" +
+                "name='" + name + '\'' +
+                '}';
 
     }
 
+    public Article(String name) {
+        this.name = name;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
 }
+
