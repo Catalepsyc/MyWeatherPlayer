@@ -11,6 +11,10 @@ public class HTMLParser {
 
    public static  void main(String[] args) throws IOException {
 
+       ///////////////////////////////////////////////////////////////////////
+       //...........Криво, сложно, но работает.........................../////
+       ///////////////////////////////////////////////////////////////////////
+
         List<Article>listOfCity = new ArrayList<>();//создаем ArrayList объектов типа Article
 
             // List<String>FullList = new ArrayList<>();
